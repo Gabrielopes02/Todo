@@ -2,12 +2,15 @@
 
 function adicionartask(){
     let lista = document.querySelector('ul')
-    let text = document.getElementById('texto').value
+    let text = document.getElementById('texto')
     
     let novatask = document.createElement('li')
-    novatask.innerHTML = text
+    novatask.innerHTML = `<input type="checkbox" class="check" onclick = "excluirtask(this)"> ${text.value}`
     lista.appendChild(novatask)
-    
+   text.value = ''
 }
 
-addEventListener()
+
+function excluirtask(li){
+li.parentElement.remove()
+}
